@@ -30,6 +30,7 @@ const createPlayer = async ( player ) => {
         if ( rows.affectedRows !== 1 ) {
             throw new Error("Player could not be created!");
         }
+        return rows.insertId;
     });
 };
 

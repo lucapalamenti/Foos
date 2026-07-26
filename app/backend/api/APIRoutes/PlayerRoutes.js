@@ -16,9 +16,9 @@ MapAPIRouter.get('/players', (req, res) => {
 });
 
 MapAPIRouter.post('/players', (req, res) => {
-    const player = new Player( req.body );
-    PlayerDAO.createPlayer( player ).then( r => {
-        res.json( r );
+    const p = new Player( req.body );
+    PlayerDAO.createPlayer( p ).then( r => {
+        res.json({message: `Player created with ID ${r}`});
     })
     .catch( err => {
         res.status(500).json({error:err, message: 'Error with POST request to /players'});

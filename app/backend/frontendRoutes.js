@@ -9,5 +9,8 @@ const templates_dir = "/app/frontend/templates/";
 frontendRouter.get('/', (req, res) => {
     res.sendFile(`${templates_dir}menu.html`);
 });
+frontendRouter.get('/addPlayer', (req, res) => {
+    res.sendFile(`${templates_dir}addPlayer.html`);
+});
 
 module.exports = frontendRouter;

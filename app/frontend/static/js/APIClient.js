@@ -12,6 +12,11 @@ const getPlayers = async () => {
     });
 };
 
+/**
+ * 
+ * @param {Player} playerData 
+ * @returns 
+ */
 const createPlayer = async ( playerData ) => {
     return await HTTPClient.post( `${BASE_API_PATH}/players`, playerData );
 };
