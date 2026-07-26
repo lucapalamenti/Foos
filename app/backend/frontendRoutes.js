@@ -7,7 +7,7 @@ frontendRouter.use(express.static('frontend/static'));
 const templates_dir = "/app/frontend/templates/";
 
 frontendRouter.get('/', (req, res) => {
-    res.sendFile(`${templates_dir}index.html`);
+    res.sendFile(`${templates_dir}menu.html`);
 });
 
 module.exports = frontendRouter;

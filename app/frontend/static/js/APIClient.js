@@ -1,25 +1,19 @@
 import HTTPClient from "./HTTPClient.js";
 
-import MyObject from "./models/MyObject.js";
-
 const BASE_API_PATH = "./api";
 
-// ----- MyObjectDAO CALLS -----
+// ----- PlayerDAO CALLS -----
 
-const getMyObjects = async () => {
-    return await HTTPClient.get( `${BASE_API_PATH}/myobjects` );
+const getPlayers = async () => {
+    const res = await HTTPClient.get( `${BASE_API_PATH}/players` );
+    return res.Map( p => new Player( p ) );
 };
 
-const createMyObject = async ( myObjectData ) => {
-    return await HTTPClient.post( `${BASE_API_PATH}/myobjects`, myObjectData );
-};
-
-const deleteMyObject = async ( myObject_id ) => {
-    return await HTTPClient.delete( `${BASE_API_PATH}/myobjects/${myObject_id}` );
+const createPlayer = async ( playerData ) => {
+    return await HTTPClient.post( `${BASE_API_PATH}/players`, playerData );
 };
 
 export default {
-    getMyObjects,
-    createMyObject,
-    deleteMyObject,
+    getPlayers,
+    createPlayer
 }
