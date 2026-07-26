@@ -1,12 +1,15 @@
 import HTTPClient from "./HTTPClient.js";
 
+import Player from "../js/models/Player.js";
+
 const BASE_API_PATH = "./api";
 
 // ----- PlayerDAO CALLS -----
 
 const getPlayers = async () => {
-    const res = await HTTPClient.get( `${BASE_API_PATH}/players` );
-    return res.Map( p => new Player( p ) );
+    return await HTTPClient.get( `${BASE_API_PATH}/players` ).then( players => {
+        return players.map( p => new Player( p ) );
+    });
 };
 
 const createPlayer = async ( playerData ) => {

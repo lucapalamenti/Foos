@@ -1,4 +1,4 @@
-export default = class Player {
+export default class Player {
     /** @type {number} */
     player_id = null;
     /** @type {string} */
