@@ -8,13 +8,12 @@ let pool;
 exports.getDatabaseConnection = () => {
     if ( !pool ) {
         pool = mariadb.createPool({
-            // THESE WOULD USUALLY BE PLACED IN A .env FILE
-            host: "database",
-            port: 3306,
-            user: "root",
-            password: "password",
-            database: "foosDatabase",
-            charset: "utf8mb4"
+            host: process.env.DB_HOST,
+            port: process.env.DB_PORT,
+            user: process.env.MYSQL_USER,
+            password: process.env.MYSQL_PASSWORD,
+            database: process.env.MYSQL_DATABASE,
+            charset: process.env.DB_CHARSET
         });
     }
     return pool;
