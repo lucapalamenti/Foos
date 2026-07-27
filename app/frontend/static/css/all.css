@@ -11,6 +11,19 @@ html, body {
     min-height: 100vh;
     min-width: 500px;
 }
+body {
+    background-image: url("../images/bg.png");
+    backdrop-filter: blur(5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgb(46, 129, 57);
+    -webkit-text-stroke: 4px rgb(97, 187, 109);
+}
 
 /* Utility */
 
@@ -27,4 +40,11 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.flex-col-center-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

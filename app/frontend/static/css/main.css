@@ -7,6 +7,7 @@ a[role=button] {
     border: 2px solid black;
     padding: 5px;
     font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
     text-align: center;
     color: black;
