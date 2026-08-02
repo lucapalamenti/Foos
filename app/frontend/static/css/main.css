@@ -21,7 +21,7 @@ a[role=button] {
     }
 }
 
-video#panorama {
+#panorama {
     width: 120%;
     z-index: -1;
     filter: blur( 8px ) brightness( 0.8 );
